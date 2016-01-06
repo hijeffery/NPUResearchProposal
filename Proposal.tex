@@ -1,3 +1,4 @@
+%!TEX program = xelatex
 \documentclass[a4paper,12pt]{NPUResearchProposal}
 \usepackage[top=2.2cm, bottom=3cm, left=2.4cm, right=2.4cm]{geometry}
 \usepackage{indentfirst}
@@ -25,7 +26,27 @@
 % \xeCJKsetup{CJKglue=\hspace{0pt plus .08 \baselineskip }}  
 \titleformat{\section}{\Large\bfseries}{\thesection.}{1em}{}
 
-
+\makeatletter
+\renewenvironment{thebibliography}[1]
+     {\section*{\refname}% <--- outcommented
+      \@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}%
+      \list{\@biblabel{\@arabic\c@enumiv}}%
+           {\settowidth\labelwidth{\@biblabel{#1}}%
+            \leftmargin\labelwidth
+            \advance\leftmargin\labelsep
+            \@openbib@code
+            \usecounter{enumiv}%
+            \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+      \sloppy
+      \clubpenalty4000
+      \@clubpenalty \clubpenalty
+      \widowpenalty4000%
+      \sfcode`\.\@m}
+     {\def\@noitemerr
+       {\@latex@warning{Empty `thebibliography' environment}}%
+      \endlist}
+\makeatother
 
 \begin{document}
 
