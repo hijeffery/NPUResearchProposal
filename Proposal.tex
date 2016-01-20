@@ -16,12 +16,13 @@
 \usepackage{type1cm}
 \usepackage{type1ec}
 % \usepackage{stmaryrd}
-\usepackage[square,sort,comma,numbers]{natbib}
+\usepackage[square,sort&compress,comma,numbers]{natbib}
 
 %\usepackage{javen}
 \usepackage{bbm}
 
 \newcommand{\NP}{\mathcal{NP}}
+\newcommand{\linespacing}{1.5}
 
 % \xeCJKsetup{CJKglue=\hspace{0pt plus .08 \baselineskip }}  
 \titleformat{\section}{\Large\bfseries}{\thesection.}{1em}{}
@@ -70,6 +71,8 @@
 \date{\today}       
 \maketitle
 
+\begin{spacing}{\linespacing}
+
 \section{研究背景与意义}
 \label{sec:background}
 公式示例见\eqref{eq:eq_example}。
@@ -116,6 +119,7 @@
 \label{sec:roadmap}
 \section{进度安排}
 \section{预期的创新点与成果}
+\end{spacing}
 
 \bibliographystyle{IEEEtranN}   % (uses file "plain.bst")
 \bibliography{ref}      % expects file "myrefs.bib"
